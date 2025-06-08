@@ -1,6 +1,6 @@
 ﻿using InvestPlus.Domain.Enums;
 
-namespace InvestPlus.Domain.Entities
+namespace InvestPlus.Domain.Entities.Inventario
 {
     public class Ativo
     {
