@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace InvestPlus.Domain.Entities
+﻿namespace InvestPlus.Domain.Entities
 {
     public class Pagamento
     {

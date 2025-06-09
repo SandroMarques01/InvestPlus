@@ -1,9 +1,4 @@
-﻿using InvestPlus.Domain.Entities.BolsaDeValores;
-using InvestPlus.Domain.Entities.Inventario;
-using System;
-using System.Collections.Generic;
-
-namespace InvestPlus.Domain.Entities
+﻿namespace InvestPlus.Domain.Entities
 {
     public class Usuario
     {

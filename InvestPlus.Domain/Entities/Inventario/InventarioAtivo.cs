@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace InvestPlus.Domain.Entities.Inventario
+namespace InvestPlus.Domain.Entities
 {
     public class InventarioAtivo
     {

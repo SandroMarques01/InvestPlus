@@ -1,7 +1,6 @@
-﻿using System;
-using InvestPlus.Domain.Enums;
+﻿using InvestPlus.Domain.Enums;
 
-namespace InvestPlus.Domain.Entities.BolsaDeValores
+namespace InvestPlus.Domain.Entities
 {
     public class Transacao
     {

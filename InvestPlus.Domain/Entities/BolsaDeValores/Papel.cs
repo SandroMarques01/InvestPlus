@@ -1,8 +1,6 @@
 ﻿using InvestPlus.Domain.Enums;
-using System;
-using System.Collections.Generic;
 
-namespace InvestPlus.Domain.Entities.BolsaDeValores
+namespace InvestPlus.Domain.Entities
 {
     public class Papel
     {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace InvestPlus.Domain.Entities
+﻿namespace InvestPlus.Domain.Entities
 {
     public class ContaPagar
     {
