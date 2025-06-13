@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
-using InvestPlus.Domain.Entities;
-using InvestPlus.Application.DTOs;
 using InvestPlus.Application.Interfaces;
+using InvestPlus.Domain.Interfaces;
 
 namespace InvestPlus.Application.UseCases
 {
-    public class AtivoService : BaseService<Ativo, AtivoDto, CriarAtivoRequest, AtualizarAtivoRequest>, IAtivoService
+    public class AtivoService : BaseService<Entities.Ativo>, IAtivoService
     {
         private readonly IMapper _mapper;
         private readonly IAtivoRepository _repo;
@@ -15,27 +14,14 @@ namespace InvestPlus.Application.UseCases
             _repo = repo;
         }
 
-        public override async Task<AtivoDto> CriarAsync(Guid usuarioId, CriarAtivoRequest request)
+        public override async Task<Entities.Ativo> CriarAsync(Guid usuarioId, Entities.Ativo ativo)
         {
-            var ativo = new Ativo
-            {
-                Id = Guid.NewGuid(),
-                Nome = request.Nome,
-                UsuarioId = usuarioId
-            };
-
             await _repo.AdicionarAsync(ativo);
-            return _mapper.Map<AtivoDto>(ativo);
+            return _mapper.Map<Entities.Ativo>(ativo);
         }
 
-        public override async Task AtualizarAsync(Guid id, Guid usuarioId, AtualizarAtivoRequest request)
+        public override async Task AtualizarAsync(Guid id, Guid usuarioId, Entities.Ativo ativo)
         {
-            var ativo = await _repo.ObterPorIdAsync(id, usuarioId)
-                ?? throw new Exception("Ativo não encontrado");
-
-            ativo.Nome = request.Nome;
-            ativo.ValorAtual = request.ValorAtual;
-
             await _repo.AtualizarAsync(ativo);
         }
 
@@ -47,16 +33,16 @@ namespace InvestPlus.Application.UseCases
             await _repo.RemoverAsync(ativo);
         }
 
-        public override async Task<AtivoDto?> ListarPorIdAsync(Guid id, Guid usuarioId)
+        public override async Task<Entities.Ativo?> ListarPorIdAsync(Guid id, Guid usuarioId)
         {
             var ativo = await _repo.ObterPorIdAsync(id, usuarioId);
-            return ativo == null ? null : _mapper.Map<AtivoDto>(ativo);
+            return ativo == null ? null : _mapper.Map<Entities.Ativo>(ativo);
         }
 
-        public override async Task<IEnumerable<AtivoDto>> ListarPorUsuarioAsync(Guid usuarioId)
+        public override async Task<IEnumerable<Entities.Ativo>> ListarPorUsuarioAsync(Guid usuarioId)
         {
             var ativos = await _repo.ListarPorUsuarioAsync(usuarioId);
-            return _mapper.Map<IEnumerable<AtivoDto>>(ativos);
+            return _mapper.Map<IEnumerable<Entities.Ativo>>(ativos);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using InvestPlus.Application.DTOs;
 
 namespace InvestPlus.Application.Mappings
 {

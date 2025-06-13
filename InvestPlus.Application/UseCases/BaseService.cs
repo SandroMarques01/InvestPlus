@@ -3,8 +3,8 @@ using InvestPlus.Application.Interfaces;
 
 namespace InvestPlus.Application.UseCases
 {
-    public abstract class BaseService<TEntity, TDto, TCreateRequest, TUpdateRequest>
-        : IBaseService<TDto, TCreateRequest, TUpdateRequest>
+    public abstract class BaseService<TEntity>
+        : IBaseService<TEntity>
     {
         protected readonly IMapper _mapper;
 
@@ -13,10 +13,10 @@ namespace InvestPlus.Application.UseCases
             _mapper = mapper;
         }
 
-        public abstract Task<TDto> CriarAsync(Guid usuarioId, TCreateRequest request);
-        public abstract Task AtualizarAsync(Guid id, Guid usuarioId, TUpdateRequest request);
+        public abstract Task<TEntity> CriarAsync(Guid usuarioId, TEntity request);
+        public abstract Task AtualizarAsync(Guid id, Guid usuarioId, TEntity request);
         public abstract Task RemoverAsync(Guid id, Guid usuarioId);
-        public abstract Task<TDto?> ListarPorIdAsync(Guid id, Guid usuarioId);
-        public abstract Task<IEnumerable<TDto>> ListarPorUsuarioAsync(Guid usuarioId);
+        public abstract Task<TEntity?> ListarPorIdAsync(Guid id, Guid usuarioId);
+        public abstract Task<IEnumerable<TEntity>> ListarPorUsuarioAsync(Guid usuarioId);
     }
 }

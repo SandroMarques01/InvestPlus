@@ -2,7 +2,7 @@
 
 namespace InvestPlus.Domain.Interfaces
 {
-    public interface IAtivoRepository : IBasicRepository<Ativo>
+    public interface IAtivoRepository : IBaseRepository<Ativo>
     {
     }
 }
