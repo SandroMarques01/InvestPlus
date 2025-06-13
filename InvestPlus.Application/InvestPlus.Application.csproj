@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InvestPlus.Domain\InvestPlus.Domain.csproj" />
+    <ProjectReference Include="..\InvestPlus.Entities\InvestPlus.Entities.csproj" />
   </ItemGroup>
 
 </Project>

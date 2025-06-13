@@ -2,7 +2,7 @@
 
 namespace InvestPlus.Application.Interfaces
 {
-    public interface IAtivoService : IBaseService<AtivoDto, CriarAtivoRequest, AtualizarAtivoRequest>
+    public interface IAtivoService : IBaseService<Entities.Ativo>
     {
         // Pode adicionar métodos específicos aqui
     }

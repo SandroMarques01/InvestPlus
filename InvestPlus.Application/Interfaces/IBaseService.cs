@@ -1,11 +1,11 @@
 ﻿namespace InvestPlus.Application.Interfaces
 {
-    public interface IBaseService<TDto, in TCreateRequest, in TUpdateRequest>
+    public interface IBaseService<T>
     {
-        Task<TDto> CriarAsync(Guid usuarioId, TCreateRequest request);
-        Task AtualizarAsync(Guid id, Guid usuarioId, TUpdateRequest request);
+        Task<T> CriarAsync(Guid usuarioId, T request);
+        Task AtualizarAsync(Guid id, Guid usuarioId, T request);
         Task RemoverAsync(Guid id, Guid usuarioId);
-        Task<TDto?> ListarPorIdAsync(Guid id, Guid usuarioId);
-        Task<IEnumerable<TDto>> ListarPorUsuarioAsync(Guid usuarioId);
+        Task<T?> ListarPorIdAsync(Guid id, Guid usuarioId);
+        Task<IEnumerable<T>> ListarPorUsuarioAsync(Guid usuarioId);
     }
 }
