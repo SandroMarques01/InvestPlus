@@ -2,7 +2,7 @@
 
 namespace InvestPlus.Domain.Entities
 {
-    public class Provento
+    public class Provento : EntityBase
     {
         public Guid Id { get; set; }
         public Guid PapelId { get; set; }

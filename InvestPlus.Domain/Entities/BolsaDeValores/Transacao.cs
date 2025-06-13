@@ -2,7 +2,7 @@
 
 namespace InvestPlus.Domain.Entities
 {
-    public class Transacao
+    public class Transacao : EntityBase
     {
         public Guid Id { get; set; }
         public Guid PapelId { get; set; }
@@ -11,7 +11,7 @@ namespace InvestPlus.Domain.Entities
         public int Quantidade { get; set; }
         public decimal ValorUnitario { get; set; }
         public decimal ValorTotal => Quantidade * ValorUnitario;
-
+ 
         // Navegação
         public Papel? Papel { get; set; }
     }

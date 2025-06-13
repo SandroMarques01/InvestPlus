@@ -2,7 +2,7 @@
 
 namespace InvestPlus.Domain.Entities
 {
-    public class InventarioAtivo
+    public class InventarioAtivo : EntityBase
     {
         public Guid Id { get; set; }
         public Guid AtivoId { get; set; }

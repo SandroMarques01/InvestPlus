@@ -2,7 +2,7 @@
 
 namespace InvestPlus.Domain.Entities
 {
-    public class Papel
+    public class Papel : EntityBase
     {
         public Guid Id { get; set; }
         public Guid UsuarioId { get; set; }

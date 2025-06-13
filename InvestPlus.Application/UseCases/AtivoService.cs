@@ -7,6 +7,7 @@ namespace InvestPlus.Application.UseCases
 {
     public class AtivoService : BaseService<Ativo, AtivoDto, CriarAtivoRequest, AtualizarAtivoRequest>, IAtivoService
     {
+        private readonly IMapper _mapper;
         private readonly IAtivoRepository _repo;
 
         public AtivoService(IAtivoRepository repo, IMapper mapper) : base(mapper)
@@ -20,7 +21,6 @@ namespace InvestPlus.Application.UseCases
             {
                 Id = Guid.NewGuid(),
                 Nome = request.Nome,
-                ValorAtual = request.ValorInicial,
                 UsuarioId = usuarioId
             };
 

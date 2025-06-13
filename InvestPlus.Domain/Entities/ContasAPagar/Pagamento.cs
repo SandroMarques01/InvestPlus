@@ -1,6 +1,6 @@
 ﻿namespace InvestPlus.Domain.Entities
 {
-    public class Pagamento
+    public class Pagamento : EntityBase
     {
         public Guid Id { get; set; }
         public Guid ContaPagarId { get; set; }
